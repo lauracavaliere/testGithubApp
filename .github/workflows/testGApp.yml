@@ -1,17 +1,27 @@
-#jobs:
-#  get-temp-token:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Get Token
-#        id: get_workflow_token
-#        uses: peter-murray/workflow-application-token-action@v1
-#        with:
-#          application_id: ${{ secrets.APPLICATION_ID }}
-#          application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
-#        
-#      - name: Use Application Token to create a release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
-#        with:
+  
+name: testGithubApp
+
+on: 
+    push:
+        paths:
+            - 'test/**'
+
+jobs:
+    test:
+      runs-on: [self-hosted, code]
+      steps:
+        - name: Get Token
+          id: get_workflow_token
+          uses: peter-murray/workflow-application-token-action@v1
+          with:
+            application_id: ${{ secrets.APPLICATION_ID }}
+            application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+
+        - name: Repository Dispatch
+          uses: peter-evans/repository-dispatch@v1
+          with:
+            token: ${{ secrets.ICUB_TECH_TEAM_CODE_ACCESS_TOKEN }}
+            repository: lauracavaliere/code
+            event-type: repository_trigger
+            client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+
