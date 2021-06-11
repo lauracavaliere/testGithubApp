@@ -20,7 +20,7 @@ jobs:
         - name: Repository Dispatch
           uses: peter-evans/repository-dispatch@v1
           with:
-            token: ${{ secrets.ICUB_TECH_TEAM_CODE_ACCESS_TOKEN }}
+            token: ${{ secrets.APPLICATION_PRIVATE_KEY }}
             repository: lauracavaliere/code
             event-type: repository_trigger
             client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
