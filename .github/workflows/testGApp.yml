@@ -18,9 +18,10 @@ jobs:
             application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
 
         - name: Use Application Token to repository dispatch
-          uses: peter-evans/repository-dispatch@v1
-          env:
-            GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
-          with:
-            repository: lauracavaliere/code
-            event-type: repository_trigger
+          run: echo ${{ steps.get_workflow_token.outputs.token }}
+#           uses: peter-evans/repository-dispatch@v1
+#           env:
+#             GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
+#           with:
+#             repository: lauracavaliere/code
+#             event-type: repository_trigger
