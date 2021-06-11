@@ -23,5 +23,4 @@ jobs:
             token: ${{ secrets.APPLICATION_PRIVATE_KEY }}
             repository: lauracavaliere/code
             event-type: repository_trigger
-            client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
 
