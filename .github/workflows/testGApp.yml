@@ -20,8 +20,8 @@ jobs:
         - name: Use Application Token to repository dispatch
           run: echo ${{ steps.get_workflow_token.outputs.token }}
 #           uses: peter-evans/repository-dispatch@v1
-#           env:
-#             GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
+          env:
+             GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
 #           with:
 #             repository: lauracavaliere/code
 #             event-type: repository_trigger
