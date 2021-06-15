@@ -27,6 +27,6 @@ jobs:
           uses: peter-evans/repository-dispatch@v1
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
-            repository: lauracavaliere/targetRepo
+            repository: lauracavaliere/code
             event-type: repository_trigger         
     
