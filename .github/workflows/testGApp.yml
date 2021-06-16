@@ -23,6 +23,6 @@ jobs:
              GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
           with:
             token: ${{ env.GITHUB_TOKEN }}
-            repository: lauracavaliere/code
+            repository: icub-tech-iit/code
             event-type: repository_trigger         
     
