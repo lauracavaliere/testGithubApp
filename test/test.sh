@@ -1,1 +1,1 @@
-echo "Hell o"
+echo "Hello"
