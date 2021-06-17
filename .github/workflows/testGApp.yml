@@ -21,6 +21,6 @@ jobs:
              GITHUB_APPS_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
           with:
             token: ${{ env.GITHUB_APPS_TOKEN }}
-            repository: icub-training/icub-training.github.io
+            repository: icub-training/test-app
             event-type: repository_trigger         
     
