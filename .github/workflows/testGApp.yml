@@ -34,5 +34,5 @@ jobs:
             
         - name: Push
           run: | 
-            ls 
+            ls && echo ${{ steps.get_workflow_token.outputs.token }}
 
