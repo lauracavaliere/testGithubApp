@@ -2,9 +2,7 @@
 name: testGithubApp
 
 on: 
-    push:
-        paths:
-            - 'test/**'
+    workflow_dispatch:
 
 jobs:
     test:
