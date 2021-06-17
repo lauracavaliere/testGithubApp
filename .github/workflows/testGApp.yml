@@ -23,6 +23,6 @@ jobs:
              GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
           with:
             token: ${{ env.GITHUB_TOKEN }}
-            repository: ilaria-carlini/test-discussionGA
+            repository: icub-training/icub-training.github.io
             event-type: repository_trigger         
     
