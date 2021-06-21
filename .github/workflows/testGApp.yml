@@ -33,6 +33,6 @@ jobs:
           with:
             token: ${{ env.GITHUB_APPS_TOKEN }}
             repository: icub-training/test-app
-            
+            event-type: repository_trigger
 
 
