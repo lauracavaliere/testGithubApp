@@ -10,10 +10,10 @@ jobs:
       steps:
         - name: Get Token
           id: get_workflow_token
-          uses: peter-murray/workflow-application-token-action@v1
+          uses: machine-learning-apps/actions-app-token@master
           with:
-            application_id: ${{ secrets.APPLICATION_ID }}
-            application_private_key: ${{ secrets.PIPPO }}
+            APP_PEM: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+            APP_ID: ${{ secrets.APPLICATION_ID }}
             
 #        - name: Repository Dispatch
 #          uses: peter-evans/repository-dispatch@v1
@@ -23,9 +23,7 @@ jobs:
 #            token: ${{ env.GITHUB_APPS_TOKEN }}
 #            repository: icub-training/test-app
 #            event-type: repository_trigger        
-        - name: Push
-          run: | 
-            ls && date
+
             
         - name: Commit to icub-training
           uses: actions/checkout@v2
