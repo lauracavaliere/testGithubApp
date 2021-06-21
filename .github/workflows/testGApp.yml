@@ -28,7 +28,7 @@ jobs:
         - name: Commit to icub-training
           uses: actions/checkout@v2
           env:
-             GITHUB_APPS_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
+             GITHUB_APPS_TOKEN: ${{ steps.get_workflow_token.outputs.app_token }}
           with:
             token: ${{ env.GITHUB_APPS_TOKEN }}
             repository: icub-training/test-app
