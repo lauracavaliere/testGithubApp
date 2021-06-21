@@ -12,7 +12,7 @@ jobs:
           id: get_workflow_token
           uses: machine-learning-apps/actions-app-token@master
           with:
-            APP_PEM: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+            APP_PEM: ${{ secrets.APPLICATION_PRIVATE_KEY_BASE64 }}
             APP_ID: ${{ secrets.APPLICATION_ID }}
             
 #        - name: Repository Dispatch
